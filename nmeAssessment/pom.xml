@@ -24,7 +24,7 @@
     </dependencies>
 
     <build>
-        <FinalName>NME</FinalName>
+        <finalName>NME</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
