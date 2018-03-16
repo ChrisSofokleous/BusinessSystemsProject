@@ -18,7 +18,7 @@
     <body>
         <h1>Album List</h1>
         
-        <table>
+        <table border="1">
             <tr>
                 <th>Album ID</th>
                 <th>Album Name</th>
@@ -34,6 +34,7 @@
                     out.println("<td>" + album.getAlbumID() + "</td>"); 
                     out.println("<td>" + album.getAlbumTitle() + "</td>");
                     out.println("<td>" + album.getReleaseDate() + "</td>");
+                    out.println("<td>" + album.getArtist().getArtistName() + "</td>");
                     out.println("</tr>");
                 }
                 

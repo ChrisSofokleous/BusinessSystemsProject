@@ -5,9 +5,12 @@
  */
 package nme.nmeassessment.domain;
 
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -23,8 +26,12 @@ public class Artist {
     private String genre;
     private int sales;
     
+    @OneToMany(mappedBy="Artist")
+    private Set<Album> albums;
+    
+    
     public Artist() {
-        
+        albums = new HashSet<>();
     }
 
     public int getArtistID() {
@@ -58,6 +65,16 @@ public class Artist {
     public void setSales(int sales) {
         this.sales = sales;
     }
+
+    public Set<Album> getAlbums() {
+        return albums;
+    }
+
+    public void setAlbums(Set<Album> albums) {
+        this.albums = albums;
+    }
+    
+    
 
     @Override
     public String toString() {
