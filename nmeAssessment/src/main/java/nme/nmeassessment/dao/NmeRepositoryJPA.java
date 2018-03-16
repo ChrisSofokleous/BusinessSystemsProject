@@ -9,8 +9,6 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
 import nme.nmeassessment.domain.Album;
 import nme.nmeassessment.domain.Artist;
 import javax.persistence.TypedQuery;
@@ -38,18 +36,21 @@ public class NmeRepositoryJPA implements NmeRepository {
         return query.getResultList();
     }
     
+    @Override
     public List<Track> findAllTracks() {
         TypedQuery<Track>query = em.createQuery("SELECT t FROM Track as t", Track.class);
         return query.getResultList();
     }
     
+    @Override
     public List<Album> findAllAlbums() {
         TypedQuery<Album>query = em.createQuery("SELECT a FROM Album as a", Album.class);
         return query.getResultList();
     }
     
+    @Override
     public int artistCount() {
-        Query query = em.createQuery("SELECT COUNT(*) from Artist");
+        TypedQuery<Integer> query = em.createQuery("SELECT a FROM Album as a", Integer.class);
         return query.getSingleResult();
     }
     
