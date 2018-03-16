@@ -5,9 +5,12 @@
  */
 package nme.nmeassessment.dao;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import nme.nmeassessment.domain.Track;
 
 /**
  *
@@ -18,6 +21,12 @@ public class NmeRepositoryJPA implements NmeRepository {
     
     @PersistenceContext
     private EntityManager em;
+    
+    public List<Track> findTracksOnAlbum(int albumID) {
+        TypedQuery<Track> query = em.createQuery("SELECT t from Track as t WHERE t.albumID =:albumID", Track.class);
+        query.setParameter("albumID", albumID);
+        return query.getResultList();
+    }
     
     
     
