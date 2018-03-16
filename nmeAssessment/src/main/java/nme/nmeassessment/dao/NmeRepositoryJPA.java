@@ -48,11 +48,12 @@ public class NmeRepositoryJPA implements NmeRepository {
         return query.getResultList();
     }
     
+    /*
     public int artistCount() {
         Query query = em.createQuery("SELECT COUNT(*) from Artist");
         return query.getSingleResult();
     }
-    
+    */
     
     
 }
