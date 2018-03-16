@@ -52,8 +52,10 @@ public class NmeRepositoryJPA implements NmeRepository {
 
     @Override
     public int artistCount() {
-        TypedQuery<Integer> query = em.createQuery("SELECT a FROM Album as a", Integer.class);
-        return query.getSingleResult();
+        TypedQuery<Long> query = em.createQuery("SELECT COUNT(a) FROM Artist AS a", Long.class);
+        Long result = query.getSingleResult();
+        Integer returnResult = result.intValue();
+        return returnResult;
     }
     
     @Override
