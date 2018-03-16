@@ -29,7 +29,7 @@
                 <td><input type="text" name="sales"/></td>
             </tr>
         </table>
-        <input type="submit" value="Add Player"/>
+        <input type="submit" value="Add Artist"/>
     </form>
     <jsp:include page="/footer.jsp" />
 </html>
