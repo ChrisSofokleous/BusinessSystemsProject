@@ -6,7 +6,9 @@
 package nme.nmeassessment.dao;
 
 import java.util.List;
-import javax.sound.midi.Track;
+import nme.nmeassessment.domain.Album;
+import nme.nmeassessment.domain.Artist;
+import nme.nmeassessment.domain.Track;
 
 /**
  *
