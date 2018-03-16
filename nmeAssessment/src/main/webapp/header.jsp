@@ -2,7 +2,7 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 <div class="logo">
-	<h1>Nme Web Application</h1>
+	
 </div>
 <div class="links">
 <a href='/nmeAssessment/loginForm.jsp' class="button">Home Page</a>
