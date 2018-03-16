@@ -9,6 +9,11 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -22,9 +27,16 @@ public class Album {
     private int albumID;
     
     private String albumTitle;
+    @Temporal(TemporalType.DATE)
     private Date releaseDate;
-    @Column(name="artistId")
-    private int artistID;
+    
+
+    
+
+
+    @ManyToOne
+    @JoinColumn(name="artistId")
+    private Artist artist;
     
     public Album() {
         
@@ -54,19 +66,29 @@ public class Album {
         this.releaseDate = releaseDate;
     }
 
-    public int getArtistID() {
-        return artistID;
+    
+    public Artist getArtist() {
+        return artist;
     }
 
-    public void setArtistID(int artistID) {
-        this.artistID = artistID;
+    public void setArtist(Artist artist) {
+        this.artist = artist;
     }
 
     @Override
     public String toString() {
-        return "Album{" + "albumID=" + albumID + ", albumTitle=" + albumTitle + ", releaseDate=" + releaseDate + ", artistID=" + artistID + '}';
+        return "Album{" + "albumID=" + albumID + ", albumTitle=" + albumTitle + ", releaseDate=" + releaseDate + '}';
     }
+
+
+   
     
+
+
+
+        
+    
+ 
     
     
     
