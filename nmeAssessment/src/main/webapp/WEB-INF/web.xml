@@ -16,7 +16,7 @@
             <web-resource-name>user_pages</web-resource-name>
             <url-pattern>/albumList.html</url-pattern>
             <url-pattern>/artistCount.html</url-pattern>
-            <url-pattern>/tracksByA;bum.jsp</url-pattern>
+            <url-pattern>/tracksByAlbum.jsp</url-pattern>
             </web-resource-collection>
         
         <auth-constraint>

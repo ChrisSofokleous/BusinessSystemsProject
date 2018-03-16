@@ -9,6 +9,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -22,6 +24,7 @@ public class Album {
     private int albumID;
     
     private String albumTitle;
+    @Temporal(TemporalType.DATE)
     private Date releaseDate;
     @Column(name="artistId")
     private int artistID;
