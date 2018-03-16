@@ -16,7 +16,7 @@
     </head>
     <body>
         <%
-        out.println("<h1> Track Results on album with ID: " + request.getParameter("albumID") + "</h1>");
+        out.println("<h1> Tracks on album with ID: " + request.getParameter("albumID") + "</h1>");
         
         %>
                 
